@@ -1,13 +1,18 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-<h2>Your Notes</h2>
-<p> Welcome to your personal meditation journal! Here, you can freely record your thoughts, experiences, and insights from each meditation session. This space is your private sanctuary for reflection—whether you want to jot down fleeting thoughts, profound revelations, or simply track your progress over time.
-</p>
-<ul>
-    {% for note in notes %}
-    <li>{{ note.title }} - {{ note.content }}</li>
-    {% endfor %}
-</ul>
-<a href="{% url 'note_create' %}">Add a new note</a>
+<div class="notes-section">
+    <h2>Your Notes</h2>
+    <p> Welcome to your personal meditation journal! Here, you can freely record your thoughts, experiences, and insights from each meditation session. This space is your private sanctuary for reflection—whether you want to jot down fleeting thoughts, profound revelations, or simply track your progress over time.
+	</p>
+    <ul>
+        {% for note in notes %}
+        <li class="note-entry">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'note_create' %}" class="add-note-button">Add a new note</a>
+</div>
 {% endblock %}
