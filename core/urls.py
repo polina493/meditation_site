@@ -10,4 +10,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='core/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
     path('delete_account/', views.delete_account, name='delete_account'),
+    path('notes/', views.note_list, name='note_list'),
+    path('notes/create/', views.note_create, name='note_create'),
 ]
