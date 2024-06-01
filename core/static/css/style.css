@@ -172,3 +172,9 @@ input[type='text'], input[type='password'], textarea {
 .add-note-button:hover {
     background-color: #9A8C98; /* Soft lilac */
 }
+
+.sidebar a.active {
+    font-weight: bold;
+    color: #FFFFFF; /* White */
+    background-color: #415c77; /* Soft blue */
+}
