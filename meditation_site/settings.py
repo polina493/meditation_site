@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'meditation_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'meditation',
+        'USER': 'postgres',
+        'PASSWORD': 'postg2lap',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
