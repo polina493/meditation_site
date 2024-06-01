@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 def home(request):
     return render(request, 'core/home.html')
@@ -20,3 +21,11 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'core/signup.html', {'form': form})
+
+@login_required
+def delete_account(request):
+    if request.method == 'POST':
+        user = request.user
+        user.delete()
+        logout(request)
+        return redirect('home')
